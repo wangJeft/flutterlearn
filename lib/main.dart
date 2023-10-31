@@ -6,6 +6,12 @@ import 'package:flutterlearn/ch3_basic_component/text_widget.dart';
 
 import 'ch3_basic_component/switch_checkbox_widget.dart';
 import 'ch3_basic_component/textfield_form_widget.dart';
+import 'ch4_layout/AlignWidget.dart';
+import 'ch4_layout/constraints_widget.dart';
+import 'ch4_layout/flex_widget.dart';
+import 'ch4_layout/layoutbuilder_afterlayout_widget.dart';
+import 'ch4_layout/stack_positioned_widget.dart';
+import 'ch4_layout/wrap_flow_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Learn',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent),
         useMaterial3: true,
       ),
       // home: const CounterWidget(),
@@ -48,7 +54,13 @@ class RelayWidget extends StatelessWidget {
       // body: const ButtonWidget(),
       // body: const SwitchCheckBox(),
       // body: const TextFieldFormWidget(),
-      body: const ProgressWidget(),
+      // body: const ProgressWidget(),
+      // body: const WidgetConstraints(),
+      // body: const ExpandedWidget(),
+      // body: const WrapFlowWidget(),
+      // body: const StackPositioned(),
+      // body: const AlignWidget(),
+      body: const LayoutBuilderAfterLayout(),
     );
   }
 }
