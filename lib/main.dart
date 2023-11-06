@@ -19,7 +19,11 @@ import 'ch4_layout/stack_positioned_widget.dart';
 import 'ch4_layout/wrap_flow_widget.dart';
 import 'ch5_container/clip_widget.dart';
 import 'ch5_container/transform_widget.dart';
+import 'ch6_scroll/animated_list_widget.dart';
+import 'ch6_scroll/grid_view_widget.dart';
 import 'ch6_scroll/listview.dart';
+import 'ch6_scroll/page_view_widget.dart';
+import 'ch6_scroll/scroll_controller_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,8 +80,11 @@ class RelayWidget extends StatelessWidget {
       // body: const ClipWidget(),
       // body: const FittedBoxWidget(),
       // body: const SingleChildScrollViewWidget(),
-      body: const ListViewWidget(),
+      // body: const AnimatedListWidget(),
+      // body: const GridViewWidget(),
+      body: const PageViewWidget(),
     );
     // return ScaffoldWidget();
+    // return ScrollControllerWidget();
   }
 }
