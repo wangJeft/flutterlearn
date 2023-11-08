@@ -29,6 +29,9 @@ import 'ch6_scroll/nested_scrollview.dart';
 import 'ch6_scroll/page_view_widget.dart';
 import 'ch6_scroll/scroll_controller_widget.dart';
 import 'ch6_scroll/scroller_child_cache.dart';
+import 'ch7_function_widget/cross_widget_stat_share.dart';
+import 'ch7_function_widget/inherited_widget.dart';
+import 'ch7_function_widget/nav_back_intercept.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,7 +65,7 @@ class RelayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /*return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text("Flutter Learn"),
@@ -91,12 +94,15 @@ class RelayWidget extends StatelessWidget {
       // body: const PageViewCacheWidget(),
       // body: const CustomScrollViewWidget(),
       // body: const CustomSliverWidget(),
-      body: const NestedScrollViewWidget(),
-    );*/
+      // body: const NestedScrollViewWidget(),
+      // body: const WillPopScopeWidget(),
+      // body: const DataShareTestWidget(),
+      body: const ProviderRoute(),
+    );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
     // return TabBarViewWidget();
     // return SnapAppBar();
-    return NestedTabBarViewWidget();
+    // return NestedTabBarViewWidget();
   }
 }
