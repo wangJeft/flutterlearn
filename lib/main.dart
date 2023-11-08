@@ -8,6 +8,7 @@ import 'package:flutterlearn/ch5_container/decorated_widget.dart';
 import 'package:flutterlearn/ch5_container/fitted_box_widget.dart';
 import 'package:flutterlearn/ch5_container/scaffold_widget.dart';
 import 'package:flutterlearn/ch6_scroll/single_child_scrollview.dart';
+import 'package:flutterlearn/ch6_scroll/tabbar_view_widget.dart';
 
 import 'ch3_basic_component/switch_checkbox_widget.dart';
 import 'ch3_basic_component/textfield_form_widget.dart';
@@ -20,10 +21,14 @@ import 'ch4_layout/wrap_flow_widget.dart';
 import 'ch5_container/clip_widget.dart';
 import 'ch5_container/transform_widget.dart';
 import 'ch6_scroll/animated_list_widget.dart';
+import 'ch6_scroll/custom_scroll_view.dart';
+import 'ch6_scroll/custom_sliver.dart';
 import 'ch6_scroll/grid_view_widget.dart';
 import 'ch6_scroll/listview.dart';
+import 'ch6_scroll/nested_scrollview.dart';
 import 'ch6_scroll/page_view_widget.dart';
 import 'ch6_scroll/scroll_controller_widget.dart';
+import 'ch6_scroll/scroller_child_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,7 +62,7 @@ class RelayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    /*return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text("Flutter Learn"),
@@ -82,9 +87,16 @@ class RelayWidget extends StatelessWidget {
       // body: const SingleChildScrollViewWidget(),
       // body: const AnimatedListWidget(),
       // body: const GridViewWidget(),
-      body: const PageViewWidget(),
-    );
+      // body: const PageViewWidget(),
+      // body: const PageViewCacheWidget(),
+      // body: const CustomScrollViewWidget(),
+      // body: const CustomSliverWidget(),
+      body: const NestedScrollViewWidget(),
+    );*/
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
+    // return TabBarViewWidget();
+    // return SnapAppBar();
+    return NestedTabBarViewWidget();
   }
 }
