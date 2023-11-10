@@ -153,7 +153,7 @@ class _ProviderRouteState extends State<ProviderRoute> {
                   print('ElevatedButton build');
                   return ElevatedButton(
                       onPressed: () {
-                        ChangeNotifierProvider.of<CartModel>(context)
+                        ChangeNotifierProvider.of<CartModel>(context,listen: false)
                             ?.add(Item(20.0, 1));
                       },
                       child: Text("添加商品"));

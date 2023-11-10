@@ -29,6 +29,8 @@ import 'ch6_scroll/nested_scrollview.dart';
 import 'ch6_scroll/page_view_widget.dart';
 import 'ch6_scroll/scroll_controller_widget.dart';
 import 'ch6_scroll/scroller_child_cache.dart';
+import 'ch7_function_widget/async_update_ui.dart';
+import 'ch7_function_widget/color_theme.dart';
 import 'ch7_function_widget/cross_widget_stat_share.dart';
 import 'ch7_function_widget/inherited_widget.dart';
 import 'ch7_function_widget/nav_back_intercept.dart';
@@ -97,7 +99,10 @@ class RelayWidget extends StatelessWidget {
       // body: const NestedScrollViewWidget(),
       // body: const WillPopScopeWidget(),
       // body: const DataShareTestWidget(),
-      body: const ProviderRoute(),
+      // body: const ProviderRoute(),
+      // body: const NavBarTest(),
+      // body: const FutureBuilderWidget(),
+      body: const StreamBuilderWidget(),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
