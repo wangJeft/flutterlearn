@@ -32,6 +32,7 @@ import 'ch6_scroll/scroller_child_cache.dart';
 import 'ch7_function_widget/async_update_ui.dart';
 import 'ch7_function_widget/color_theme.dart';
 import 'ch7_function_widget/cross_widget_stat_share.dart';
+import 'ch7_function_widget/dialog_widget.dart';
 import 'ch7_function_widget/inherited_widget.dart';
 import 'ch7_function_widget/nav_back_intercept.dart';
 
@@ -102,7 +103,8 @@ class RelayWidget extends StatelessWidget {
       // body: const ProviderRoute(),
       // body: const NavBarTest(),
       // body: const FutureBuilderWidget(),
-      body: const StreamBuilderWidget(),
+      // body: const StreamBuilderWidget(),
+      body: const DialogWidget(),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
