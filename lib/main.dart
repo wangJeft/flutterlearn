@@ -9,6 +9,7 @@ import 'package:flutterlearn/ch5_container/fitted_box_widget.dart';
 import 'package:flutterlearn/ch5_container/scaffold_widget.dart';
 import 'package:flutterlearn/ch6_scroll/single_child_scrollview.dart';
 import 'package:flutterlearn/ch6_scroll/tabbar_view_widget.dart';
+import 'package:flutterlearn/ch8_event_notify_process/gesture_detector.dart';
 
 import 'ch3_basic_component/switch_checkbox_widget.dart';
 import 'ch3_basic_component/textfield_form_widget.dart';
@@ -35,6 +36,7 @@ import 'ch7_function_widget/cross_widget_stat_share.dart';
 import 'ch7_function_widget/dialog_widget.dart';
 import 'ch7_function_widget/inherited_widget.dart';
 import 'ch7_function_widget/nav_back_intercept.dart';
+import 'ch8_event_notify_process/original_event.dart';
 
 void main() {
   runApp(const MyApp());
@@ -104,7 +106,9 @@ class RelayWidget extends StatelessWidget {
       // body: const NavBarTest(),
       // body: const FutureBuilderWidget(),
       // body: const StreamBuilderWidget(),
-      body: const DialogWidget(),
+      // body: const DialogWidget(),
+      // body: const PointerMoveIndicator(),
+      body: const GestureWidget(),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
