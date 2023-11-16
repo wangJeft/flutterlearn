@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class GestureWidget extends StatelessWidget {
   const GestureWidget({super.key});
@@ -7,7 +8,8 @@ class GestureWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return GestureDetectorTest();
-    return GestureRecognizerTest();
+    // return GestureRecognizerTest();
+    return PointerDownListenerTest();
   }
 }
 
@@ -142,3 +144,59 @@ class _GestureRecognizerTestState extends State<GestureRecognizerTest> {
     );
   }
 }
+
+//可以监听PointerDownEvent事件的组件
+class PointerDownListenerTest extends StatelessWidget {
+  const PointerDownListenerTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return PointerDownListener(
+      onPointerDown: (e) => print('down'),
+      child: Text('Click me'),
+    );
+  }
+}
+
+class PointerDownListener extends SingleChildRenderObjectWidget {
+  const PointerDownListener({Key? key, this.onPointerDown, Widget? child})
+      : super(key: key, child: child);
+
+  final PointerDownEventListener? onPointerDown;
+
+  @override
+  RenderObject createRenderObject(BuildContext context) {
+    return RenderPointerDownListener()..onPointerDown = onPointerDown;
+  }
+
+  @override
+  void updateRenderObject(
+      BuildContext context, covariant RenderPointerDownListener renderObject) {
+    renderObject.onPointerDown = onPointerDown;
+  }
+}
+
+class RenderPointerDownListener extends RenderProxyBox {
+  PointerDownEventListener? onPointerDown;
+
+  @override
+  bool hitTestSelf(Offset position) {
+    return true;
+  }
+
+  @override
+  void handleEvent(
+      PointerEvent event, covariant HitTestEntry<HitTestTarget> entry) {
+    if (event is PointerDownEvent) onPointerDown?.call(event);
+  }
+}
+
+class WaterMaskTest extends StatelessWidget {
+  const WaterMaskTest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+

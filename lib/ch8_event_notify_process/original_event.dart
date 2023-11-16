@@ -38,7 +38,6 @@ class _PointerMoveIndicatorState extends State<PointerMoveIndicator> {
         SizedBox(
           height: 50,
         ),
-
         //AbsorbPointer让子树不响应指针事件, 但是其本身会参与命中测试
         //IgnorePointer让子树不响应指针事件, 但是其本身不会参与命中测试
         Listener(
