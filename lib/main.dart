@@ -38,6 +38,7 @@ import 'ch7_function_widget/inherited_widget.dart';
 import 'ch7_function_widget/nav_back_intercept.dart';
 import 'ch8_event_notify_process/event_notification.dart';
 import 'ch8_event_notify_process/original_event.dart';
+import 'ch9_animation/animation_base_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -110,7 +111,8 @@ class RelayWidget extends StatelessWidget {
       // body: const DialogWidget(),
       // body: const PointerMoveIndicator(),
       // body: const GestureWidget(),
-      body: const NotificationRoute(),
+      // body: const NotificationRoute(),
+      body: const AnimationBaseWidget(),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
