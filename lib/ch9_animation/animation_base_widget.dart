@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'animation_route.dart';
+import 'animation_switcher.dart';
+import 'animation_transition_widget.dart';
 import 'hero_animation.dart';
 import 'mutil_animation.dart';
 
@@ -15,7 +17,10 @@ class AnimationBaseWidget extends StatelessWidget {
     // return AnimatedRoutePageA();
     // return CustomHeroAnimation();
     // return HeroAnimationRouteA();
-    return StaggerRoute();
+    // return StaggerRoute();
+    // return AnimatedSwitcherCounterRoute();
+    // return AnimatedDecoratedRoute();
+    return AnimatedWidgetTest();
   }
 }
 
