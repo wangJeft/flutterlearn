@@ -273,7 +273,7 @@ class _AnimatedWidgetTestState extends State<AnimatedWidgetTest> {
                 },
                 child: Text(
                   "AnimatedOpacity",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.blue),
                 )),
           ),
           AnimatedDecoratedBox1(
