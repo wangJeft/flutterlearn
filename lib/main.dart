@@ -11,6 +11,7 @@ import 'package:flutterlearn/ch6_scroll/single_child_scrollview.dart';
 import 'package:flutterlearn/ch6_scroll/tabbar_view_widget.dart';
 import 'package:flutterlearn/ch8_event_notify_process/gesture_detector.dart';
 
+import 'ch10_custom_widget/custom_widget.dart';
 import 'ch3_basic_component/switch_checkbox_widget.dart';
 import 'ch3_basic_component/textfield_form_widget.dart';
 import 'ch4_layout/AlignWidget.dart';
@@ -112,7 +113,8 @@ class RelayWidget extends StatelessWidget {
       // body: const PointerMoveIndicator(),
       // body: const GestureWidget(),
       // body: const NotificationRoute(),
-      body: const AnimationBaseWidget(),
+      // body: const AnimationBaseWidget(),
+      body: const CustomWidget(),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();
