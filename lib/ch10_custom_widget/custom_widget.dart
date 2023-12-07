@@ -6,6 +6,7 @@ import 'package:flutterlearn/ch10_custom_widget/turn_box.dart';
 
 import 'custom_check_box.dart';
 import 'custom_done_widget.dart';
+import 'custom_water_mark.dart';
 
 class CustomWidget extends StatelessWidget {
   const CustomWidget({super.key});
@@ -17,6 +18,7 @@ class CustomWidget extends StatelessWidget {
     // return CustomPaintRoute();
     // return GradientCircularProgressRoute();
     // return CustomCheckboxTest();
-    return DoneWidgetRoute();
+    // return DoneWidgetRoute();
+    return WatermarkRoute();
   }
 }
