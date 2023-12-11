@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutterlearn/ch13_localization/demo_local.dart';
 import 'package:flutterlearn/ch3_basic_component/button_widget.dart';
 import 'package:flutterlearn/ch3_basic_component/image_icon_widget.dart';
 import 'package:flutterlearn/ch3_basic_component/progress_widget.dart';
@@ -10,6 +12,7 @@ import 'package:flutterlearn/ch5_container/scaffold_widget.dart';
 import 'package:flutterlearn/ch6_scroll/single_child_scrollview.dart';
 import 'package:flutterlearn/ch6_scroll/tabbar_view_widget.dart';
 import 'package:flutterlearn/ch8_event_notify_process/gesture_detector.dart';
+import 'package:flutterlearn/l10n/localization_intl.dart';
 
 import 'ch10_custom_widget/custom_widget.dart';
 import 'ch11_file_net_operate/dio.dart';
@@ -55,7 +58,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Learn',
+      //多语言支持
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        // DemoLocalizationsDelegate()
+        DemoLocalizationsDelegate2()
+      ],
+      supportedLocales: [
+        const Locale('en', 'US'),
+        const Locale('zh', 'CN'),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.blue,
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent),
@@ -79,7 +93,9 @@ class RelayWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        title: const Text("Flutter Learn"),
+        //title会跟着系统语言变化
+        // title: Text(DemoLocalizations.of(context).title),
+        title: Text(DemoLocalizations2.of(context).title),
       ),
       // body: const TextWidget(),
       // body: const ImageIconWidget(),
