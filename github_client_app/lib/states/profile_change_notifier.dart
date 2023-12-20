@@ -25,11 +25,11 @@ class UserModel extends ProfileChangeNotifier {
 }
 
 class ThemeModel extends ProfileChangeNotifier {
-  ColorSwatch get theme =>
+  MaterialColor get theme =>
       Global.themes.firstWhere((element) => element.value == _profile.theme,
           orElse: () => Colors.blue);
 
-  set theme(ColorSwatch color) {
+  set theme(MaterialColor color) {
     if (color != theme) {
       _profile.theme = color.value;
       notifyListeners();
