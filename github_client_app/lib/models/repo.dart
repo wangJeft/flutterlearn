@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import "user.dart";
+
 part 'repo.g.dart';
 
 @JsonSerializable()
@@ -24,8 +25,9 @@ class Repo {
   String? created_at;
   String? updated_at;
   num? subscribers_count;
-  Map<String,dynamic>? license;
-  
-  factory Repo.fromJson(Map<String,dynamic> json) => _$RepoFromJson(json);
+  Map<String, dynamic>? license;
+
+  factory Repo.fromJson(Map<String, dynamic> json) => _$RepoFromJson(json);
+
   Map<String, dynamic> toJson() => _$RepoToJson(this);
 }
