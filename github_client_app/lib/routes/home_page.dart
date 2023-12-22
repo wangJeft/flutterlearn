@@ -125,7 +125,7 @@ class MyDrawer extends StatelessWidget {
                 ),
                 Text(
                   value.isLogin
-                      ? value.user!.login
+                      ? value.user!.login!
                       : GmLocalizations.of(context).login,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),

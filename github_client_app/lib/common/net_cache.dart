@@ -23,7 +23,7 @@ class NetCache extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    if (!Global.profile.cache!.enable) {
+    if (!Global.profile.cache!.enable!) {
       return handler.next(options);
     }
     bool refresh = options.extra["refresh"] == true;
@@ -42,7 +42,7 @@ class NetCache extends Interceptor {
       var ob = cache[key];
       if (ob != null) {
         if ((DateTime.now().millisecondsSinceEpoch - ob.timeStamp) / 1000 <
-            Global.profile.cache!.maxAge) {
+            Global.profile.cache!.maxAge!) {
           return handler.resolve(ob.response);
         } else {
           cache.remove(key);
@@ -54,7 +54,7 @@ class NetCache extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    if (Global.profile.cache!.enable) {
+    if (Global.profile.cache!.enable!) {
       _saveCache(response);
     }
     handler.next(response);

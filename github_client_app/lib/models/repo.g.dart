@@ -7,25 +7,25 @@ part of 'repo.dart';
 // **************************************************************************
 
 Repo _$RepoFromJson(Map<String, dynamic> json) => Repo()
-  ..id = json['id'] as num
+  ..id = json['id'] as num?
   ..name = json['name'] as String
   ..full_name = json['full_name'] as String
-  ..owner = User.fromJson(json['owner'] as Map<String, dynamic>)
+  ..owner = User.fromJson(json['owner'])
   ..parent = json['parent'] == null
       ? null
       : Repo.fromJson(json['parent'] as Map<String, dynamic>)
-  ..private = json['private'] as bool
-  ..description = json['description'] as String
+  ..private = json['private'] as bool?
+  ..description = json['description'] as String?
   ..fork = json['fork'] as bool
   ..language = json['language'] as String?
-  ..forks_count = json['forks_count'] as num
-  ..stargazers_count = json['stargazers_count'] as num
-  ..size = json['size'] as num
-  ..default_branch = json['default_branch'] as String
-  ..open_issues_count = json['open_issues_count'] as num
-  ..pushed_at = json['pushed_at'] as String
-  ..created_at = json['created_at'] as String
-  ..updated_at = json['updated_at'] as String
+  ..forks_count = json['forks_count'] as num?
+  ..stargazers_count = json['stargazers_count'] as num?
+  ..size = json['size'] as num?
+  ..default_branch = json['default_branch'] as String?
+  ..open_issues_count = json['open_issues_count'] as num?
+  ..pushed_at = json['pushed_at'] as String?
+  ..created_at = json['created_at'] as String?
+  ..updated_at = json['updated_at'] as String?
   ..subscribers_count = json['subscribers_count'] as num?
   ..license = json['license'] as Map<String, dynamic>?;
 

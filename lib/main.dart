@@ -70,10 +70,15 @@ class MyApp extends StatelessWidget {
         const Locale('en', 'US'),
         const Locale('zh', 'CN'),
       ],
-      theme: ThemeData(
+      /*theme: ThemeData(
         primarySwatch: Colors.blue,
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent),
         // useMaterial3: true,
+      ),*/
+
+      theme: ThemeData.from(
+        colorScheme:
+        ColorScheme.fromSwatch(primarySwatch: Colors.blue),
       ),
       // home: const CounterWidget(),
       // home: const TapBoxA(),

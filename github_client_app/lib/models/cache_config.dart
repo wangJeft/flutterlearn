@@ -5,11 +5,10 @@ part 'cache_config.g.dart';
 @JsonSerializable()
 class CacheConfig {
   CacheConfig();
-
-  late bool enable;
-  late num maxAge;
-  late num maxCount;
-  
-  factory CacheConfig.fromJson(Map<String,dynamic> json) => _$CacheConfigFromJson(json);
+  bool? enable;
+  num? maxAge;
+  num? maxCount;
+  factory CacheConfig.fromJson(Map<String, dynamic> json) =>
+      _$CacheConfigFromJson(json);
   Map<String, dynamic> toJson() => _$CacheConfigToJson(this);
 }

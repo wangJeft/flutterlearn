@@ -22,7 +22,13 @@ class MyApp extends StatelessWidget {
         builder: (context, themeModel, localeModel, child) {
           return MaterialApp(
             title: 'Flutter Demo',
-            theme: ThemeData(primarySwatch: themeModel.theme),
+            //下面的写法已经失效了
+            // theme: ThemeData(primarySwatch: themeModel.theme),
+            theme: ThemeData.from(
+              colorScheme:
+                  ColorScheme.fromSwatch(primarySwatch: themeModel.theme,
+                  backgroundColor: Colors.white),
+            ),
             onGenerateTitle: (context) {
               return GmLocalizations.of(context).title;
             },
