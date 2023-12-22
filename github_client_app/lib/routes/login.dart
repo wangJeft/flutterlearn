@@ -2,7 +2,6 @@ import 'package:provider/provider.dart';
 
 import '../index.dart';
 
-// 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
 class LoginRoute extends StatefulWidget {
   const LoginRoute({super.key});
 
@@ -17,7 +16,7 @@ class _LoginRouteState extends State<LoginRoute> {
   final GlobalKey _formKey = GlobalKey<FormState>();
   bool _namedAutoFocus = true;
   final String defaultPwd =
-      "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";
+      "";
 
   @override
   void initState() {
