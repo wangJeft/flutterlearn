@@ -6,23 +6,23 @@ part 'repo.g.dart';
 class Repo {
   Repo();
 
-  late num id;
+  num? id;
   late String name;
   late String full_name;
   late User owner;
   Repo? parent;
-  late bool private;
-  late String? description;
+  bool? private;
+  String? description;
   late bool fork;
   String? language;
-  late num forks_count;
-  late num stargazers_count;
-  late num size;
-  late String default_branch;
-  late num open_issues_count;
-  late String pushed_at;
-  late String created_at;
-  late String updated_at;
+  num? forks_count;
+  num? stargazers_count;
+  num? size;
+  String? default_branch;
+  num? open_issues_count;
+  String? pushed_at;
+  String? created_at;
+  String? updated_at;
   num? subscribers_count;
   Map<String,dynamic>? license;
   

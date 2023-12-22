@@ -44,6 +44,7 @@ class Git {
 
   Future<User> login(String login, String pwd) async {
     String basic = 'Basic ${base64.encode(utf8.encode('$login:$pwd'))}';
+    print('basic: $basic');
     var r = await dio.get(
       "/user",
       options: _options.copyWith(
