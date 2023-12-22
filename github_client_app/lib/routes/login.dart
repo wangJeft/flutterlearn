@@ -1,5 +1,6 @@
 import 'package:provider/provider.dart';
 
+import '../common/git_login_test_key.dart';
 import '../index.dart';
 
 class LoginRoute extends StatefulWidget {
@@ -15,8 +16,7 @@ class _LoginRouteState extends State<LoginRoute> {
   bool pwdShow = false;
   final GlobalKey _formKey = GlobalKey<FormState>();
   bool _namedAutoFocus = true;
-  final String defaultPwd =
-      "";
+  final String defaultPwd =pwd;
 
   @override
   void initState() {
