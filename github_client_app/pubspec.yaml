@@ -1,4 +1,4 @@
-name: github_client_app
+name: github_app
 description: github client app
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -74,6 +74,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - imgs/
+  fonts:
+    - family: myIcon
+      fonts:
+        - asset: fonts/iconfont.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

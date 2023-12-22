@@ -12,7 +12,7 @@ class Repo {
   late User owner;
   Repo? parent;
   late bool private;
-  late String description;
+  late String? description;
   late bool fork;
   String? language;
   late num forks_count;

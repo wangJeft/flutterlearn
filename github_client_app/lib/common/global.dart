@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:github_client_app/models/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'index.dart';
+import '../models/index.dart';
 
 const _themes = <MaterialColor>[
   Colors.blue,
