@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutterlearn/ch11_file_net_operate/file_net_route.dart';
 import 'package:flutterlearn/ch13_localization/demo_local.dart';
+import 'package:flutterlearn/ch3_basic_component/basic_component_route.dart';
 import 'package:flutterlearn/ch3_basic_component/button_widget.dart';
 import 'package:flutterlearn/ch3_basic_component/image_icon_widget.dart';
 import 'package:flutterlearn/ch3_basic_component/progress_widget.dart';
 import 'package:flutterlearn/ch3_basic_component/text_widget.dart';
+import 'package:flutterlearn/ch4_layout/layout_route.dart';
+import 'package:flutterlearn/ch5_container/container_route.dart';
 import 'package:flutterlearn/ch5_container/container_widget.dart';
 import 'package:flutterlearn/ch5_container/decorated_widget.dart';
 import 'package:flutterlearn/ch5_container/fitted_box_widget.dart';
 import 'package:flutterlearn/ch5_container/scaffold_widget.dart';
+import 'package:flutterlearn/ch6_scroll/scroll_route.dart';
 import 'package:flutterlearn/ch6_scroll/single_child_scrollview.dart';
 import 'package:flutterlearn/ch6_scroll/tabbar_view_widget.dart';
+import 'package:flutterlearn/ch7_function_widget/function_route.dart';
 import 'package:flutterlearn/ch8_event_notify_process/gesture_detector.dart';
 import 'package:flutterlearn/l10n/localization_intl.dart';
 
@@ -48,12 +54,23 @@ import 'ch8_event_notify_process/original_event.dart';
 import 'ch9_animation/animation_base_widget.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
   // runApp(const StateLifecycleTest());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final routes = <String, WidgetBuilder>{
+    "BasicComponent": (context) => BasicComponentRoute(),
+    "Layout": (context) => LayoutRoute(),
+    "Container": (context) => ContainerRoute(),
+    "Scroll": (context) => ScrollRoute(),
+    "Function": (context) => FunctionRoute(),
+    "Animation": (context) => AnimationBaseWidget(),
+    "CustomWidget": (context) => CustomWidget(),
+    "FileNet": (context) => FileNetRoute(),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -77,21 +94,25 @@ class MyApp extends StatelessWidget {
       ),*/
 
       theme: ThemeData.from(
-        colorScheme:
-        ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+        colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.blue, backgroundColor: Colors.white),
       ),
       // home: const CounterWidget(),
       // home: const TapBoxA(),
       // home: const ParentWidget(),
-      home: const RelayWidget(),
+      home: RelayWidget(routes: routes),
+      routes: routes,
     );
   }
 }
 
 class RelayWidget extends StatelessWidget {
-  const RelayWidget({
+  RelayWidget({
+    required this.routes,
     super.key,
   });
+
+  final Map<String, WidgetBuilder> routes;
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +162,20 @@ class RelayWidget extends StatelessWidget {
       // body: const CustomWidget(),
       // body: const FileOperate(),
       // body: const HttpTestRoute(),
-      body: const DioRoute(),
+      // body: const DioRoute(),
+      body: ListView(
+        children: routes.keys
+            .map((e) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, e);
+                    },
+                    child: Text(e),
+                  ),
+                ))
+            .toList(),
+      ),
     );
     // return ScaffoldWidget();
     // return ScrollControllerWidget();

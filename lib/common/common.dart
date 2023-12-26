@@ -19,6 +19,7 @@ class AfterLayout extends SingleChildRenderObjectWidget {
       BuildContext context, RenderAfterLayout renderObject) {
     renderObject.callback = callback;
   }
+
   /// [callback] will be triggered after the layout phase ends.
   final ValueSetter<RenderAfterLayout> callback;
 }
@@ -41,6 +42,39 @@ class RenderAfterLayout extends RenderProxyBox {
 
   /// 组件在在屏幕坐标中的起始偏移坐标
   Offset get offset => localToGlobal(Offset.zero);
+
   /// 组件在屏幕上占有的矩形空间区域
   Rect get rect => offset & size;
+}
+
+class PagePair {
+  PagePair({required this.name, required this.page});
+
+  String name;
+  Widget page;
+}
+
+class CommonPageViewRoute extends StatelessWidget {
+  CommonPageViewRoute({super.key, required this.pages, required this.pageName});
+
+  final List<PagePair> pages;
+  final String pageName;
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+        length: pages.length,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(pageName),
+            bottom: TabBar(
+              tabs: pages.map((e) => Tab(text: e.name)).toList(),
+              isScrollable: true,
+            ),
+          ),
+          body: TabBarView(
+            children: pages.map((e) => e.page).toList(),
+          ),
+        ));
+  }
 }

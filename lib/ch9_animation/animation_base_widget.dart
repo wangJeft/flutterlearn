@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterlearn/common/common.dart';
 
 import 'animation_route.dart';
 import 'animation_switcher.dart';
@@ -20,7 +21,22 @@ class AnimationBaseWidget extends StatelessWidget {
     // return StaggerRoute();
     // return AnimatedSwitcherCounterRoute();
     // return AnimatedDecoratedRoute();
-    return AnimatedWidgetTest();
+    // return AnimatedWidgetTest();
+    return CommonPageViewRoute(
+      pages: [
+        PagePair(name: "scale", page: ScaleAnimationRoute()),
+        PagePair(name: "scale1", page: ScaleAnimationRoute1()),
+        PagePair(name: "scale2", page: ScaleAnimationRoute2()),
+        PagePair(name: "AnimatedRoutePageA", page: AnimatedRoutePageA()),
+        PagePair(name: "CustomHeroAnimation", page: CustomHeroAnimation()),
+        PagePair(name: "HeroAnimationRouteA", page: HeroAnimationRouteA()),
+        PagePair(name: "StaggerRoute", page: StaggerRoute()),
+        PagePair(name: "AnimatedSwitcherCounterRoute", page: AnimatedSwitcherCounterRoute()),
+        PagePair(name: "AnimatedDecoratedRoute", page: AnimatedDecoratedRoute()),
+        PagePair(name: "AnimatedWidgetTest", page: AnimatedWidgetTest()),
+      ],
+      pageName: "Animation",
+    );
   }
 }
 
@@ -156,15 +172,15 @@ class _ScaleAnimationRouteState2 extends State<ScaleAnimationRoute2>
         parent: controller, curve: Curves.easeInOutCubicEmphasized);
 
     animation = Tween(begin: 0.0, end: 300.0).animate(animation)
-    ..addStatusListener((status) {
-      if(status == AnimationStatus.completed){
-        //动画执行结束时反向执行动画
-        controller.reverse();
-      } else if(status == AnimationStatus.dismissed){
-        //动画恢复到初始状态时执行动画（正向）
-        controller.forward();
-      }
-    });
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          //动画执行结束时反向执行动画
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          //动画恢复到初始状态时执行动画（正向）
+          controller.forward();
+        }
+      });
 
     controller.forward();
   }
