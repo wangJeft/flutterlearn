@@ -95,7 +95,9 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData.from(
         colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.blue, backgroundColor: Colors.white),
+          primarySwatch: Colors.blue,
+          backgroundColor: Colors.white,
+        ),
       ),
       // home: const CounterWidget(),
       // home: const TapBoxA(),

@@ -9,6 +9,7 @@ class ThemeChangeRout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Provider.of<ThemeModel>(context).theme,
         title: Text(GmLocalizations.of(context).theme),
       ),
       body: ListView(

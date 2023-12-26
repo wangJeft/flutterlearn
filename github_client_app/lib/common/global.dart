@@ -40,7 +40,7 @@ class Global {
       }
     } else {
       // 默认主题索引为0，代表蓝色
-      profile = Profile()..theme = 0;
+      profile = Profile()..theme = _themes[0].value;
     }
 
     // 如果没有缓存策略，设置默认缓存策略

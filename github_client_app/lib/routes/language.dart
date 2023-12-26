@@ -30,6 +30,7 @@ class LanguageRoute extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Provider.of<ThemeModel>(context).theme,
         title: Text(gm.language),
       ),
       body: ListView(

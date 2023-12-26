@@ -19,6 +19,7 @@ class _HomeRouteState extends State<HomeRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Provider.of<ThemeModel>(context).theme,
         title: Text(GmLocalizations.of(context).home),
       ),
       body: _buildBody(),
